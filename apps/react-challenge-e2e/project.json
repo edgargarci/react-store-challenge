@@ -1,0 +1,28 @@
+{
+  "root": "apps/react-challenge-e2e",
+  "sourceRoot": "apps/react-challenge-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/react-challenge-e2e/cypress.json",
+        "devServerTarget": "react-challenge:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "react-challenge:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/react-challenge-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["react-challenge"]
+}

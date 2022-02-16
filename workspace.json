@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "react-challenge": "apps/react-challenge",
+    "react-challenge-e2e": "apps/react-challenge-e2e"
+  }
+}

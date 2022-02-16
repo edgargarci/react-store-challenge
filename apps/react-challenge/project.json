@@ -1,0 +1,73 @@
+{
+  "root": "apps/react-challenge",
+  "sourceRoot": "apps/react-challenge/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/react-challenge",
+        "index": "apps/react-challenge/src/index.html",
+        "baseHref": "/",
+        "main": "apps/react-challenge/src/main.tsx",
+        "polyfills": "apps/react-challenge/src/polyfills.ts",
+        "tsConfig": "apps/react-challenge/tsconfig.app.json",
+        "assets": [
+          "apps/react-challenge/src/favicon.ico",
+          "apps/react-challenge/src/assets"
+        ],
+        "styles": ["apps/react-challenge/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/react-challenge/src/environments/environment.ts",
+              "with": "apps/react-challenge/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "react-challenge:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "react-challenge:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/react-challenge/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/react-challenge"],
+      "options": {
+        "jestConfig": "apps/react-challenge/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
