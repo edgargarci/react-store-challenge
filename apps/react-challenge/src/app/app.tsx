@@ -1,13 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.scss';
-import NxWelcome from './nx-welcome';
+import { LandingProducts } from './landing-products/landing-products';
 
 export function App() {
   return (
-    <>
-      <NxWelcome title="react-challenge" />
-      <div />
-    </>
+      <LandingProducts />
   );
 }
 

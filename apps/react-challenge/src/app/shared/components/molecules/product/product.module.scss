@@ -1,0 +1,17 @@
+.img-prod {
+  width: 100px;
+  margin: 20px;
+  height: 130px;
+  border: 1px solid #a5a5a5;
+  display: flex;
+  align-content: stretch;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  img {
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}
